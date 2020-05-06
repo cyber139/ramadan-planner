@@ -1,0 +1,54 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Create Event</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab3" (click)="closeModal()"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item-sliding>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title> Add event</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-row>	
+
+          <ion-item>
+            <ion-input  placeholder="Enter New Event" type="text" text-right [(ngModel)]="doc_name[0]" id="doc_name[0]" name="doc_name[0]" required></ion-input>
+          </ion-item>
+
+          <ion-fab-button size="small" (click)="selectNo1(1);">
+            <ion-icon name="add-outline"></ion-icon>
+          </ion-fab-button>
+
+      </ion-row>
+      <ion-row *ngFor="let item of MySelect1;" class="myrow">						
+        <ion-item>
+            <ion-input placeholder="Enter New Event" type="text" text-right [(ngModel)]="doc_name[item]" id="doc_name[item]"
+              name="doc_name[item]" required>
+            </ion-input>
+          </ion-item>
+
+        <ion-fab-button position="end" color="primary"  size="small"(click)="selectNo1(0);">
+          <ion-icon name="close-outline" ></ion-icon>
+        </ion-fab-button>
+ 
+    </ion-row>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </ion-item-sliding>
+  
+</ion-content>
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button>
+    <ion-icon name="save-outline"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+

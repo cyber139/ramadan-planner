@@ -1,3 +1,4 @@
+
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
@@ -29,7 +30,7 @@
   <ion-item-sliding>
     <ion-card>
       <ion-card-header>
-        <ion-card-title>Your Template</ion-card-title>
+        <ion-card-title>Your Event</ion-card-title>
       </ion-card-header>
       <ion-card-content>
         <ion-list>
@@ -38,12 +39,6 @@
             <ion-label>{{entry.val}}</ion-label>
             <ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox>
           </ion-item>
-          <!--Multiple input and delete input-->
-          <ion-item *ngFor="let item of MySelect1;" class="myrow">
-            <ion-input placeholder="Enter New Event" type="text" text-right [(ngModel)]="doc_name[0]" id="doc_name[0]"
-              name="doc_name[0]" required>
-            </ion-input>
-          </ion-item>
         </ion-list>
       </ion-card-content>
     </ion-card>
@@ -51,23 +46,12 @@
 </ion-content>
 
 
-
 <!--Plus icon-->
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button>
+    <ion-fab-button (click)="openModal();">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
-    <ion-fab-list side="top">
-      <ion-fab-button size="small" (click)="selectNo1(1);">
-        <ion-icon name="add-outline"></ion-icon>
-      </ion-fab-button>
-      <ion-fab-button color="primary" (click)="selectNo1(0);">
-        <ion-icon name="close-outline"></ion-icon>
-      </ion-fab-button>
-      <ion-fab-button color="secondary">
-        <ion-icon name="save-outline"></ion-icon>
-      </ion-fab-button>
-    </ion-fab-list>
   </ion-fab>
+
 
 

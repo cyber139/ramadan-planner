@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NavController, ModalController } from '@ionic/angular';
+import { ModalPage } from './modal/modal.page';
 
 @Component({
   selector: 'app-tab3',
@@ -6,8 +8,26 @@ import { Component } from '@angular/core';
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page {
+value = 0;
+  constructor(private nav: NavController,private modalController: ModalController) {}
 
-  constructor() {}
+  async openModal(){
+    const modal = await this.modalController.create({
+      component:ModalPage,
+      componentProps:{
+        custom_id:this.value
+      }
+    });
+    modal.present();
+  }
+
+  closeModel(){
+    this.modalController.dismiss();
+  }
+
+  async closeModal(){
+    this.modalController.dismiss();
+  }
   
   segmentChanged(ev: any) {
     console.log('Segment changed', ev);
@@ -19,21 +39,5 @@ export class Tab3Page {
     { val: 'Mushroom', isChecked: false }
   ];
 
-MySelect1:any=[];
-moreIndex1:any=1;
-doc_name:any=[];
 
-selectNo1(val1){
-    if(val1==1)
-    {
-     this.MySelect1.push(this.moreIndex1);
-     this.moreIndex1++;
-     this.doc_name++;
-    }
-    else{
-      this.MySelect1.pop(this.moreIndex1);
-      this.moreIndex1--;
-      this.doc_name--;
-    }    
-  }
 }
