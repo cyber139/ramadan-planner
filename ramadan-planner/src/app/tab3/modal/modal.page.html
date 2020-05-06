@@ -19,7 +19,8 @@
           <ion-row>	
 
           <ion-item>
-            <ion-input  placeholder="Enter New Event" type="text" text-right [(ngModel)]="doc_name[0]" id="doc_name[0]" name="doc_name[0]" required></ion-input>
+            <ion-input  placeholder="Enter New Event" type="text" text-right [(ngModel)]="doc_name[0]" 
+            id="doc_name[0]" name="doc_name[0]" required></ion-input>
           </ion-item>
 
           <ion-fab-button size="small" (click)="selectNo1(1);">
@@ -29,8 +30,8 @@
       </ion-row>
       <ion-row *ngFor="let item of MySelect1;" class="myrow">						
         <ion-item>
-            <ion-input placeholder="Enter New Event" type="text" text-right [(ngModel)]="doc_name[item]" id="doc_name[item]"
-              name="doc_name[item]" required>
+            <ion-input placeholder="Enter New Event" type="text" text-right [(ngModel)]="doc_name[item]"
+             id="doc_name[item]" name="doc_name[item]" required>
             </ion-input>
           </ion-item>
 
@@ -47,8 +48,8 @@
 </ion-content>
 
 <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-  <ion-fab-button>
-    <ion-icon name="save-outline"></ion-icon>
+  <ion-fab-button >
+    <ion-icon name="save-outline" (click)="submit()"></ion-icon>
   </ion-fab-button>
 </ion-fab>
 
