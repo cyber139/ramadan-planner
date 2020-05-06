@@ -21,13 +21,7 @@ value = 0;
     modal.present();
   }
 
-  closeModel(){
-    this.modalController.dismiss();
-  }
-
-  async closeModal(){
-    this.modalController.dismiss();
-  }
+  
   
   segmentChanged(ev: any) {
     console.log('Segment changed', ev);
@@ -38,6 +32,9 @@ value = 0;
     { val: 'Sausage', isChecked: false },
     { val: 'Mushroom', isChecked: false }
   ];
-
+  
+  // submit(){
+  //   console.log(this.doc_name);
+  // }
 
 }

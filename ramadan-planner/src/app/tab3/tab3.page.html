@@ -35,6 +35,11 @@
       <ion-card-content>
         <ion-list>
           <!--Checkbox-->
+          <!-- <ion-item *ngFor="let entry of form">
+            <ion-label>{{entry.val}}</ion-label>
+            <ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox>
+          </ion-item> -->
+
           <ion-item *ngFor="let entry of form">
             <ion-label>{{entry.val}}</ion-label>
             <ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox>
