@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavController,ModalController } from '@ionic/angular';
 
 
+
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.page.html',
@@ -11,9 +12,9 @@ export class ModalPage implements OnInit {
 
   constructor(private nav:NavController,private modalCtrl:ModalController) { }
 
-  closeModal(){
-    this.modalCtrl.dismiss();
-  }
+  // closeModal(){
+  //   this.modalCtrl.dismiss();
+  // }
 
 
   ngOnInit() {
@@ -30,8 +31,6 @@ selectNo1(val1){
      this.MySelect1.push(this.moreIndex1);
      this.moreIndex1++;
      console.log(this.doc_name);
-     console.log(this.MySelect1);
-     console.log(this.moreIndex1);
     }
     else{
       this.MySelect1.pop(this.moreIndex1);
@@ -43,6 +42,6 @@ selectNo1(val1){
 
   submit(){
     console.log(this.doc_name);
-    this.closeModal();
+    this.modalCtrl.dismiss(this.doc_name);
   }
 }

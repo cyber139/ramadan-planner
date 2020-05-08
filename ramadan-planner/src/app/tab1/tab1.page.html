@@ -1,6 +1,57 @@
 <!--https://github.com/afzafri/Waktu-Solat-API cuba usha api sini untuk dapatkan waktu solat-->
-
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-title>
+        <ion-icon size="large" name="moon-outline"></ion-icon> 
+        Ramadan Planner
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
 <ion-card>
+  <ion-item>
+  <ion-label >{{location}}</ion-label>
+  <ion-button (click)="showOption()">
+    <ion-icon name="locate-outline"></ion-icon>
+  </ion-button>
+</ion-item>
+</ion-card>
+
+<ion-content>
+
+  <ion-title size="large" >{{today | date:'EEEE	,d MMMM yyyy H:mm'}}</ion-title>
+  <ion-title *ngFor="let item of prayerTime"   class="ion-text-wrap" >
+    <ion-title  > {{item.text}} : {{item.value}}</ion-title>
+  </ion-title>
+
+ </ion-content>
+
+<ion-content>
+ <ion-card>
+ 
+    <ion-card-header>
+      <ion-card-title>What have you done today?</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+
+
+      <ion-list>
+      <ion-infinite-scroll>
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data…">
+        <ion-item *ngFor="let entry of form">
+          <ion-label>{{entry.val}}</ion-label>
+          <ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox>
+        </ion-item>
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+      </ion-list>
+
+    </ion-card-content>
+  </ion-card> 
+  </ion-content>
+ 
+<!-- <ion-card>
   <ion-item>
     <ion-icon name="pin" slot="start"></ion-icon>
     <ion-label>ion-item in a card, icon left, button right</ion-label>
@@ -33,4 +84,4 @@
     <ion-icon name="walk" slot="start"></ion-icon>
     <ion-label>Card Button Item 2</ion-label>
   </ion-item>
-</ion-card>
+</ion-card> -->
