@@ -2,27 +2,46 @@
   <ion-header [translucent]="true">
     <ion-toolbar>
       <ion-title>
-        <ion-icon size="large" name="moon-outline"></ion-icon> 
+      <div align="center">
+        <ion-icon size="large" name="moon-outline"></ion-icon>
+        <br>
         Ramadan Planner
+        </div>
       </ion-title>
     </ion-toolbar>
   </ion-header>
 <ion-card>
   <ion-item>
   <ion-label >{{location}}</ion-label>
-  <ion-button (click)="showOption()">
+  <ion-button size="default" (click)="showOption()">
     <ion-icon name="locate-outline"></ion-icon>
   </ion-button>
 </ion-item>
 </ion-card>
 
 <ion-content>
-
-  <ion-title size="large" >{{today | date:'EEEE	,d MMMM yyyy H:mm'}}</ion-title>
-  <ion-title *ngFor="let item of prayerTime"   class="ion-text-wrap" >
-    <ion-title  > {{item.text}} : {{item.value}}</ion-title>
-  </ion-title>
-
+<div align="center">
+  
+  <ion-title size="undefined" >{{today | date:'EEEE,  d MMMM yyyy'}}</ion-title>
+  <p></p>
+  <ion-title size="undefined" >{{today | date:'H:mm'}}</ion-title>
+  <ion-row>
+    <ion-col col-2>
+      <div align="right">
+      <ion-title *ngFor="let item of prayerTime"   class="ion-text-wrap" >
+        <ion-title> {{item.text}} :</ion-title>
+      </ion-title>
+      </div>
+    </ion-col>
+    <ion-col col-2>
+      <div align="left">
+      <ion-title *ngFor="let item of prayerTime"   class="ion-text-wrap" >
+        <ion-title> {{item.value}}</ion-title>
+      </ion-title>
+    </div>
+    </ion-col>
+  </ion-row>
+</div>
  </ion-content>
 
 <ion-content>
