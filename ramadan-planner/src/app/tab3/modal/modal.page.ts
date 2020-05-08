@@ -22,7 +22,13 @@ export class ModalPage implements OnInit {
 
   MySelect1:any=[];
   moreIndex1:any=1;
-  doc_name:any=[];
+  public doc_name:any=[
+    // {
+    //   value: String, 
+    //   checked: Boolean
+    // },
+   
+  ];
   item = 0;
 
 selectNo1(val1){
