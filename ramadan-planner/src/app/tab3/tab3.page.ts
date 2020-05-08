@@ -13,10 +13,16 @@ import { isNgTemplate } from '@angular/compiler';
 export class Tab3Page {
 value = 0;
 i=0;
+type:string;
 public doc_name:any=[];
+days: any= ['Mon','Tues','Wed','Thurs','Fri','Sat','Sun'];
+day: string='';
+
+
 
   constructor(private nav: NavController,
   private modalController: ModalController){}
+
   
   // async openModal(){
   //   const modal = await this.modalController.create({
@@ -50,9 +56,19 @@ public doc_name:any=[];
     return await modal.present();
 }
   
-  segmentChanged(ev: any) {
-    console.log('Segment changed', ev);
-  }
+ngOnInit() {
+  this.type = 'mon';
+  this.type = 'tues';
+  this.type = 'wed';
+  this.type = 'thurs';
+  this.type = 'fri';
+  this.type = 'sat';
+  this.type = 'sun';
+}
+
+segmentChanged(ev: any) {
+  console.log('Segment changed', ev);
+}
 
   checkAll(){
     for(let i =0; i <= this.doc_name.length; i++) {
