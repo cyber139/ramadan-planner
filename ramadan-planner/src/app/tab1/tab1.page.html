@@ -1,34 +1,89 @@
-<ion-card>
-  <ion-item>
-    <ion-icon name="pin" slot="start"></ion-icon>
-    <ion-label>ion-item in a card, icon left, button right</ion-label>
-    <ion-button fill="outline" slot="end">View</ion-button>
-  </ion-item>
+<ion-app>
+  <ion-card>
+    <ion-card-content>
+      <ion-label><img id="asis" src="../assets/icon/favicon.png" /></ion-label>
+      &nbsp;
+      <ion-label
+        ><ion-card-title id="ramadan-title"
+          >Ramadan Planner</ion-card-title
+        ></ion-label
+      >
+      <ion-label
+        ><ion-datetime
+          id="tarikh"
+          displayFormat="DDDD D.M.YYYY"
+          [(ngModel)]="myDate"
+        ></ion-datetime
+      ></ion-label>
 
-  <ion-card-content>
-    This is content, without any paragraph or header tags, within an
-    ion-card-content element.
-  </ion-card-content>
-</ion-card>
+      <div id="tarikh">
+        <ion-label>{{hour}}&nbsp;:</ion-label>
+        <ion-label>&nbsp;{{minute}}&nbsp;:</ion-label>
+        <ion-label>&nbsp;{{second}}&nbsp;</ion-label>
+        <ion-label>&nbsp;{{ampm}}&nbsp;</ion-label>
+      </div>
 
-<ion-card>
-  <ion-item href="#" class="ion-activated">
-    <ion-icon name="wifi" slot="start"></ion-icon>
-    <ion-label>Card Link Item 1 activated</ion-label>
-  </ion-item>
+      <!-- <div id="waktusolat"> -->
+      <!-- <div><ion-label>SUBUH{{ azan }}</ion-label></div>
+        <div><ion-label>IMSAK</ion-label></div>
+        <div><ion-label>SYURUK</ion-label></div>
+        <div><ion-label>ZUHUR</ion-label></div>
+        <div><ion-label>ASAR</ion-label></div>
+        <div><ion-label>MAGHRIB</ion-label></div>
+        <div><ion-label>ISYAK</ion-label></div> -->
+      <!-- 
+        <li *ngFor="let Waktu of this.data">
+          <div><ion-label>{{Waktu}} </ion-label></div>
+        </li>
+      </div> -->
+      <!-- 
+      <div class="row header">
+        <div class="col" *ngFor="let Waktu of this.userData">{{Waktu}}</div>
 
-  <ion-item href="#">
-    <ion-icon name="wine" slot="start"></ion-icon>
-    <ion-label>Card Link Item 2</ion-label>
-  </ion-item>
+        <div class="row" *ngFor="let waktu of this.data">
+          <div class="col">{{waktu}}</div>
+        </div>
+      </div> -->
 
-  <ion-item class="ion-activated">
-    <ion-icon name="warning" slot="start"></ion-icon>
-    <ion-label>Card Button Item 1 activated</ion-label>
-  </ion-item>
+      <!-- <table style="width: 100%;">
+        <tr>
+          <td *ngFor="let Waktu of cart">{{Waktu}}<br /></td>
+          <td *ngFor="let waktu of this.data">{{waktu}}<br /></td>
+        </tr>
+      </table> -->
+      <div id="tarikh">
+        <ion-label *ngFor="let Waktu of cart"
+          >{{Waktu.namaSolat}} {{Waktu.waktuSolat}}<br
+        /></ion-label>
+      </div>
+      <!-- <div class="row">
+        <div class="col-6" *ngFor="let Waktu of this.userData">
+          {{Waktu}}
+        </div>
 
-  <ion-item>
-    <ion-icon name="walk" slot="start"></ion-icon>
-    <ion-label>Card Button Item 2</ion-label>
-  </ion-item>
-</ion-card>
+        <div class="col-6" *ngFor="let waktu of this.data">
+          {{waktu}}
+        </div>
+      </div> -->
+
+      <!-- <ion-row>
+        <ion-col *ngFor="let Waktu of this.userData">{{Waktu}}</ion-col>
+        <ion-col *ngFor="let waktu of this.data">
+          {{waktu}}
+        </ion-col>
+      </ion-row> -->
+    </ion-card-content>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size-md="6" offset-md="3">
+          <ion-card>
+            <ion-card-content>
+              What have you done today?
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+</ion-app>

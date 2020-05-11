@@ -1,5 +1,7 @@
 {
   "name": "ramadan-planner",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
