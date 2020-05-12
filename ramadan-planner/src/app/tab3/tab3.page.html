@@ -41,14 +41,17 @@
                     <ion-checkbox slot="end" (ionChange)="addCheckbox($event,item)"></ion-checkbox>
                   </ion-item>
                   <ion-label></ion-label>
+                  
                   <!-- <button ion-button color="dark" (click)="checkAll()">Mark all</button> -->
                 </ion-list>
+                <ion-button expand="block" (click)='getCheckedBoxes()'>Save and Done!</ion-button>
               </ion-card-content>
             </ion-card>
           </ion-item-sliding>
         </ion-list>
       </div>
     </div>
+    
   </ion-content>
 
 

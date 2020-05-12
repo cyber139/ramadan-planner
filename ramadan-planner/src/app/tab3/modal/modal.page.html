@@ -33,11 +33,12 @@
             <ion-input placeholder="Enter New Event" type="text" text-right [(ngModel)]="doc_name[item]"
              id="doc_name[item]" name="doc_name[item]" required>
             </ion-input>
+            <ion-fab-button position="end" color="primary"  size="small"(click)="selectNo1(0);">
+              <ion-icon name="close-outline" ></ion-icon>
+            </ion-fab-button>
           </ion-item>
 
-        <ion-fab-button position="end" color="primary"  size="small"(click)="selectNo1(0);">
-          <ion-icon name="close-outline" ></ion-icon>
-        </ion-fab-button>
+        
  
     </ion-row>
         </ion-list>

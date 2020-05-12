@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController,ModalController } from '@ionic/angular';
+import { Storage } from '@ionic/storage';
 
 
 
@@ -10,12 +11,7 @@ import { NavController,ModalController } from '@ionic/angular';
 })
 export class ModalPage implements OnInit {
 
-  constructor(private nav:NavController,private modalCtrl:ModalController) { }
-
-  // closeModal(){
-  //   this.modalCtrl.dismiss();
-  // }
-
+  constructor(private nav:NavController,private modalCtrl:ModalController,private storage: Storage) { }
 
   ngOnInit() {
   }
@@ -37,6 +33,7 @@ selectNo1(val1){
      this.MySelect1.push(this.moreIndex1);
      this.moreIndex1++;
      console.log(this.doc_name);
+     
     }
     else{
       this.MySelect1.pop(this.moreIndex1);
@@ -50,4 +47,13 @@ selectNo1(val1){
     console.log(this.doc_name);
     this.modalCtrl.dismiss(this.doc_name);
   }
+
+    
+  // // set a key/value
+  // storage.set('name', 'Max');
+
+  // // Or to get a key/value pair
+  // storage.get('age').then((val) => {
+  //   console.log('Your age is', val);
+  // });
 }

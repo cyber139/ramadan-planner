@@ -36,7 +36,6 @@ export class Tab1Service {
     let body = res;
     return body || { };
   }
-  
   getDataUser(): Observable<any> {
     return this.http.get(apiUrl, httpOptions).pipe(
       map(this.extractData)

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, ModalController } from '@ionic/angular';
 import { ModalPage } from './modal/modal.page';
 import { isNgTemplate } from '@angular/compiler';
+import { Storage } from '@ionic/storage';
 
 
 @Component({
@@ -11,28 +12,19 @@ import { isNgTemplate } from '@angular/compiler';
 })
 
 export class Tab3Page {
+  
+
 value = 0;
 i=0;
 type:string;
 public doc_name:any=[];
+public list:any=[];
 days: any= ['Mon','Tues','Wed','Thurs','Fri','Sat','Sun'];
 day: string='';
 
-
-
   constructor(private nav: NavController,
-  private modalController: ModalController){}
-
-  
-  // async openModal(){
-  //   const modal = await this.modalController.create({
-  //     component:ModalPage,
-  //     componentProps:{
-  //       custom_id:this.value
-  //     }
-  //   });
-  //   modal.present();
-  // }
+  private modalController: ModalController,
+  private storage: Storage){}
 
   async openModal() {
     const modal = await this.modalController.create({
@@ -47,14 +39,24 @@ day: string='';
       for(var i=0;i<doc_name.data.length;i++){
         this.doc_name.push(doc_name.data[i]);
         console.log(doc_name.data[i]);
+        this.storage.set('text', doc_name.data[i]).then(result => {
+          console.log('Data is saved');
+          }).catch(e => {
+          console.log("error: " + e);
+          });
       }
-      // this.doc_name.push(doc_name);
-      // console.log(doc_name);
-      
+       
     });
     
     return await modal.present();
 }
+  // // set a key/value
+  // storage.set('name', 'Max');
+
+  // // Or to get a key/value pair
+  // storage.get('age').then((val) => {
+  //   console.log('Your age is', val);
+  // });
   
 ngOnInit() {
   this.type = 'mon';
@@ -64,6 +66,8 @@ ngOnInit() {
   this.type = 'fri';
   this.type = 'sat';
   this.type = 'sun';
+
+
 }
 
 segmentChanged(ev: any) {
@@ -108,7 +112,16 @@ addCheckbox(event, checkbox : String) {
    console.log(this.checked);
  }
 
-
+// getDataFromStorage(){
+//   this.storage.get('text').then(result => {
+//     if (result != null) {
+//     console.log('text: '+ result);
+//     }
+//     }).catch(e => {
+//     console.log('error: '+ e);
+//     // Handle errors here
+//     });
+// }
   
 //   checkValues(event) {
 //     console.log(this.data);
@@ -117,8 +130,8 @@ addCheckbox(event, checkbox : String) {
 //     this.data.push(this.data);
 // }
   
-  // submit(){
-  //   console.log(this.doc_name);
-  // }
+//   submit(){
+//     console.log(this.doc_name);
+//   }
 
 }
