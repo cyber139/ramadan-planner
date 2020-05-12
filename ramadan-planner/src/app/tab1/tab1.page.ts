@@ -91,6 +91,7 @@ export class Tab1Page {
       let col = await picker.getColumn('location');
       console.log('col: ',col);
       this.location = col.options[col.selectedIndex].text
+      console.log('locate: ',data.data.location)
     });
   }
 }
