@@ -14,7 +14,26 @@
   </ion-header>
   <!--https://ampersandacademy.com/tutorials/ionic-framework-4/ionic-4-calendar-ui-plugin-example
 usha tutorial untuk calendar-->
-    <ion-calendar [(ngModel)]="range">
-    </ion-calendar>
-</ion-content>
+    <!-- <ion-calendar [(ngModel)]="range">
+    </ion-calendar> -->
+        <!-- https://github.com/hsuanxyz/ion2-calendar -->
+        <ion-calendar #calendar
+                  [(ngModel)]="date"
+                  (onChange)="onChange($event)"
+                  (onSelect)="onSelect($event)"
+                  (onSelectStart)="onSelectStart($event)"
+                  (onSelectEnd)="onSelectEnd($event)"
+                  [options]="options"
+                  type="string"
+                  format="YYYY-MM-DD"
+                  >
+          </ion-calendar>
 
+
+</ion-content>
+<ion-button   expand="block" (click)="addEvent()">Set Event</ion-button>
+<ion-button   expand="block" (click)="getCalendarViewDate()">View Event</ion-button>
+<ion-card>
+  <ion-card-header>
+  </ion-card-header>
+</ion-card>

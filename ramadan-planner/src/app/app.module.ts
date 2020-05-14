@@ -15,8 +15,8 @@ import { ModalPageModule } from './tab3/modal/modal.module';
 import { HttpClientModule, HttpClient } from "@angular/common/http";
 import { Geolocation } from "@ionic-native/geolocation/ngx";
 import { ApiService } from "./api.service";
-import { Tab1Page } from "../app/tab1/tab1.page";
 import { IonicStorageModule } from '@ionic/storage';
+
 
 @NgModule({
   declarations: [AppComponent],
