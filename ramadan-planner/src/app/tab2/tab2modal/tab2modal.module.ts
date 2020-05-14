@@ -4,18 +4,18 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ModalPageRoutingModule } from './modal-routing.module';
+import { Tab2modalPageRoutingModule } from './tab2modal-routing.module';
 
-import { ModalPage } from './modal.page';
+import { Tab2modalPage } from './tab2modal.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ModalPageRoutingModule
+    Tab2modalPageRoutingModule
   ],
-  declarations: [ModalPage],
-  entryComponents: [ModalPage]
+  declarations: [Tab2modalPage],
+  entryComponents: [Tab2modalPage]
 })
-export class ModalPageModule {}
+export class Tab2modalPageModule {}

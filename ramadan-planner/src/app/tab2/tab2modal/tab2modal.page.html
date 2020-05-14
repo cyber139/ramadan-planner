@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Set Event</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <form (ngSubmit)="save()">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Title :</ion-label>
+        <ion-input type="text" [(ngModel)]="event.header" name="event.header"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Location</ion-label>
+        <ion-input type="text" [(ngModel)]="event.location" name="event.location"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Notes</ion-label>
+        <ion-input type="text" [(ngModel)]="event.message" name="event.message"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Start Date</ion-label>
+        <ion-datetime displayFormat="DD MMM YYYY" pickerFormat="MM/DD/YYYY" [(ngModel)]="event.startDate" name="event.startDate"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">End Date</ion-label>
+        <ion-datetime displayFormat="DD MMM YYYY" pickerFormat="MM/DD/YYYY" [(ngModel)]="event.endDate" name="event.endDate"></ion-datetime>
+      </ion-item>
+    </ion-list>
+  </form>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button >
+      <ion-icon name="save-outline" (ngSubmit)="save()" type="submit"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  
+</ion-content>

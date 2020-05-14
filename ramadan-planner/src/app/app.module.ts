@@ -12,27 +12,31 @@ import { CalendarModule } from 'ion2-calendar';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ModalPageModule } from './tab3/modal/modal.module';
+import { Tab2modalPageModule } from './tab2/tab2modal/tab2modal.module'
 import { HttpClientModule, HttpClient } from "@angular/common/http";
 import { Geolocation } from "@ionic-native/geolocation/ngx";
 import { ApiService } from "./api.service";
 import { IonicStorageModule } from '@ionic/storage';
+import { Calendar } from '@ionic-native/calendar/ngx';
 
 
 @NgModule({
   declarations: [AppComponent],
-  entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), 
     AppRoutingModule, 
     ModalPageModule,
+    Tab2modalPageModule,
     CalendarModule,
     HttpClientModule,
-    IonicStorageModule.forRoot()],
+    IonicStorageModule.forRoot(),
+    ],
   providers: [
     StatusBar,
     SplashScreen,
     Geolocation,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     ApiService,
+    Calendar
   ],
   bootstrap: [AppComponent]
 })

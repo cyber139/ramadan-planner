@@ -31,9 +31,38 @@ usha tutorial untuk calendar-->
 
 
 </ion-content>
-<ion-button   expand="block" (click)="addEvent()">Set Event</ion-button>
+
+
+
+
+<ion-content>
+    <ion-grid>
+<!-- <ng-template #otherDate class="otherDate">{{day}}<br>
+            <div class="event-bullet" *ngIf="checkEvent(day)"></div>
+      </ng-template>
+        -->
+    </ion-grid>
+  <div class="selected-event" *ngIf="isSelected">
+    <ion-list>
+      <ion-item *ngFor="let se of selectedEvent">
+        <ion-buttons expand="block"  (click)="deleteEvent(se)">
+        </ion-buttons><ion-icon name="close"></ion-icon>
+        <h2>{{se.title}}</h2>
+        <h3>{{se.message}}</h3>
+        <p>Start Date: {{se.startDate}}<br>
+        Start Date: {{se.endDate}}</p>
+      </ion-item>
+    </ion-list>
+  </div>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="openModal();">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+<ion-footer>
+<ion-button   expand="block" (click)="openModal()">Set Event</ion-button>
 <ion-button   expand="block" (click)="getCalendarViewDate()">View Event</ion-button>
-<ion-card>
-  <ion-card-header>
-  </ion-card-header>
-</ion-card>
+</ion-footer>
+
+

@@ -6,7 +6,12 @@ const routes: Routes = [
   {
     path: '',
     component: Tab2Page,
+  },
+  {
+    path: 'tab2modal',
+    loadChildren: () => import('./tab2modal/tab2modal.module').then( m => m.Tab2modalPageModule)
   }
+
 ];
 
 @NgModule({
